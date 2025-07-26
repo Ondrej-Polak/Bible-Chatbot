@@ -1,13 +1,16 @@
-from flask import Flask, request, jsonify, render_template, session
-import openai, os
+import os
 from dotenv import load_dotenv
+from flask import Flask, request, jsonify, render_template, session
+import openai
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'fcc6e8ca74b9228be6741ca12f60c74d'
+app.secret_key = os.getenv("SECRET_KEY")  # Now loaded from .env
 
-# Initialize the OpenAI
-load_dotenv()
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+
 
 @app.route('/')
 def index():
