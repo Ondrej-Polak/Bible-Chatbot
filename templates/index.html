@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible ChatBot</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ask a Bible Question</h1>
+        <button id="accessibilityBtn" class="accessibility-icon">A</button>
+        <div class="flex-container">
+            <div class="box left">
+                <form id="questionForm">
+                    <label for="question">Enter your question:</label>
+                    <input type="text" id="question" name="question" required>
+                    <button type="submit" style="margin-top: 20px;">Ask</button>
+                    <button type="button" id="readAloudButton" onclick="speakText()" style="margin-top: 10px;">Read Aloud</button>
+                    <button type="button" onclick="resetHistory()" style="margin-top: 10px;">Reset</button>
+                </form>
+            </div>
+            <div class="box right" id="responseBox">
+                <div id="response">
+                   
+                </div>
+                <button id="expandButton" onclick="expandContent()" style="display: none; margin-top: 10px;">Expand</button>
+            </div>
+        </div>
+    </div>
+        <script src="/static/script.js"></script>
+
+        <div id="accessibilityModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Accessibility Settings</h2>
+                <label for="highContrast">High Contrast Mode:</label>
+                <input type="checkbox" id="highContrast" onchange="toggleHighContrast()"><br>
+                <label for="backgroundColor">Background Color:</label>
+                <input type="color" id="backgroundColor" onchange="changeBackgroundColor(event)"><br>
+                <label for="fontColor">Font Color:</label>
+                <input type="color" id="fontColor" onchange="changeFontColor(event)"><br>
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize" onchange="changeFontSize(event)">
+                    <option value="14px">Small</option>
+                    <option value="18px">Medium</option>
+                    <option value="22px">Large</option>
+                </select>
+            </div>
+        </div>
+</body>
+</html>

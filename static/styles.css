@@ -1,0 +1,160 @@
+/* General body styles */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for centering the content */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flex container for layout */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Styling for each box inside the flex container */
+.box {
+    width: 90%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+}
+
+/* Input and button styling */
+input[type="text"], button {
+    width: 80%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #6C6C70;
+    background: #f4f4f9;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .box {
+        width: 45%;
+    }
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.accessibility-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px;  /* Keeps the button square */
+    height: 40px;
+    background-color: #f9f9f9;  /* A light background */
+    border: none;  /* Removes default border styling */
+    border-radius: 5px;  /* Softens the corners a bit */
+    color: #333;  /* A darker color for the text or icon */
+    font-size: 16px;  /* Ensures the text is readable */
+    text-align: center;  /* Centers text or icon */
+    line-height: 40px;  /* Vertically centers the text based on height */
+    cursor: pointer;  /* Changes cursor to pointer to indicate it's clickable */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* Adds a subtle shadow for depth */
+}
+
+.accessibility-icon:hover {
+    background-color: #e0e0e0;  /* A slightly darker background on hover */
+}
+
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast input[type="text"], .high-contrast button {
+    background-color: #333; /* Dark background for inputs and buttons */
+    color: white; /* White text for readability */
+    border-color: white; /* White borders for better visibility */
+}
+
+.high-contrast .box {
+    background-color: #222; /* Darker background for boxes */
+    color: white;
+}
+
+.high-contrast .modal-content {
+    background-color: #333; /* Darker modal background */
+}
+
